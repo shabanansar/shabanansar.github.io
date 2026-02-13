@@ -7,6 +7,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gloria+Hallelujah&family=Poppins&display=swap" rel="stylesheet">
 <style>
+/* ===== Body & General ===== */
 body, html {
     margin: 0;
     padding: 0;
@@ -15,24 +16,18 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* ===== General Section Styles ===== */
-section {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 40px 30px;
-    background: #ffc0cb;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    text-align: center;
-    position: relative;
-}
-
-/* Hi Meri Jaan (full-width) */
+/* ===== Main Heading ===== */
 .main-heading-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: none;
     box-shadow: none;
     margin: 0;
     padding: 80px 20px;
+    min-height: 60vh;
+    text-align: center;
 }
 .main-heading-section h1 {
     font-family: 'Dancing Script', cursive;
@@ -52,6 +47,18 @@ section {
     color: #fff;
     line-height: 1.6;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px 30px;
+    background: #ffc0cb;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
 }
 
 /* Headings & Text Shadows */
@@ -79,15 +86,17 @@ ul {
     text-align: left;
 }
 
-/* Picture + quotes */
+/* ===== Picture + Quotes ===== */
 .quote-section img {
-    max-width: 450px;
+    max-width: 500px;
     border-radius: 25px;
     margin: 20px 0;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 .quote-section img:hover {
     transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 .quote-section p {
     font-family: 'Gloria Hallelujah', cursive;
@@ -97,7 +106,7 @@ ul {
     text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
-/* Gallery */
+/* ===== Gallery ===== */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -117,7 +126,7 @@ ul {
     box-shadow: 0 10px 35px rgba(0,0,0,0.5);
 }
 
-/* Quiz */
+/* ===== Quiz ===== */
 .quiz-options button {
     padding: 15px 25px;
     margin: 8px;
@@ -144,7 +153,7 @@ ul {
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* Sticky Note */
+/* ===== Sticky Note ===== */
 .sticky-note {
     background: #fffa87;
     padding: 30px 20px;
@@ -158,14 +167,18 @@ ul {
     margin: 0 auto;
 }
 
-/* Video */
+/* ===== Video ===== */
 video {
-    max-width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 5px solid #fff0f5; /* subtle cute border */
+    background: #ffe6f0;
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 .btn {
     padding: 15px 35px;
     font-size: 18px;
@@ -189,7 +202,7 @@ video {
     transform: translate(-50%, -50%);
 }
 
-/* Floating hearts */
+/* ===== Floating Hearts ===== */
 .heart {
     position: fixed;
     bottom: -10px;
@@ -246,7 +259,6 @@ document.body.addEventListener("click", function() {
     <p id="timer"></p>
 </section>
 <script>
-// Live timer
 function updateTimer() {
     const startDate = new Date('2023-01-15T00:00:00');
     const now = new Date();
@@ -302,98 +314,4 @@ let currentQuestion = 0;
 let score = 0;
 
 function showQuestion() {
-    const quizDiv = document.getElementById('quiz');
-    quizDiv.innerHTML = '';
-    if(currentQuestion >= quizData.length){
-        document.getElementById('quizResult').innerHTML = `5/5<br>Because my girl is the smartest and the prettiest and the most gorgeous ❤️`;
-        return;
-    }
-    const q = quizData[currentQuestion];
-    const questionEl = document.createElement('div');
-    questionEl.className = 'quiz-question';
-    questionEl.innerHTML = `<h2>${q.q}</h2>`;
-    quizDiv.appendChild(questionEl);
-
-    const optionsDiv = document.createElement('div');
-    optionsDiv.className = 'quiz-options';
-    q.a.forEach((ans,i)=>{
-        const btn = document.createElement('button');
-        btn.textContent = ans;
-        btn.onclick = ()=>{
-            if(i === q.correct){
-                btn.classList.add('correct');
-                score++;
-            } else{
-                btn.classList.add('wrong');
-            }
-            setTimeout(()=>{
-                currentQuestion++;
-                showQuestion();
-            },500);
-        }
-        optionsDiv.appendChild(btn);
-    });
-    quizDiv.appendChild(optionsDiv);
-}
-showQuestion();
-</script>
-
-<!-- ===== Sticky Note One-Liners ===== -->
-<section>
-    <h1>Little Notes From Me 📝</h1>
-    <div class="sticky-note">
-        <p>- I love the way you laugh.<br>
-        - Your hugs are my favorite place.<br>
-        - Every day with you is my favorite day.<br>
-        - You make ordinary moments magical.<br>
-        - You complete me.</p>
-    </div>
-</section>
-
-<!-- ===== Video Clip ===== -->
-<section>
-    <h1>Moments in Motion 🎥</h1>
-    <video controls>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
-</section>
-
-<!-- ===== Will You Be Mine ===== -->
-<section>
-    <h1>Will You Be Mine? ❤️</h1>
-    <button class="btn yes" onclick="alert('I KNEW IT 😌❤️')">YES ❤️</button>
-    <button class="btn no" onmouseover="moveButton()" id="noBtn">NO 😢</button>
-</section>
-
-<script>
-// Move NO button initially
-window.onload = () => {
-    const btn = document.getElementById('noBtn');
-    btn.style.left = '65%';
-    btn.style.top = '50%';
-}
-
-// No button hover animation
-function moveButton(){
-    const btn = document.getElementById('noBtn');
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    btn.style.left = x + "px";
-    btn.style.top = y + "px";
-}
-
-// Floating hearts
-function createHeart(){
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random()*100+"vw";
-    document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),5000);
-}
-setInterval(createHeart, 500);
-</script>
-
-</body>
-</html>
+    const
