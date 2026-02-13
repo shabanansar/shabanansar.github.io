@@ -69,9 +69,10 @@
 
 <body>
 
-    <audio autoplay loop>
-        <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
-    </audio>
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
 
     <section>
         <h1>Hi My Love ❤️</h1>
@@ -102,6 +103,11 @@
     </section>
 
     <script>
+        document.body.addEventListener("click", function() {
+    var music = document.getElementById("bgMusic");
+    music.play();
+}, { once: true });
+
         function yesClicked() {
             alert("I KNEW IT 😌❤️");
         }
