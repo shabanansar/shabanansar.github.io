@@ -314,4 +314,98 @@ let currentQuestion = 0;
 let score = 0;
 
 function showQuestion() {
-    const
+    const quizDiv = document.getElementById('quiz');
+    quizDiv.innerHTML = '';
+    if(currentQuestion >= quizData.length){
+        document.getElementById('quizResult').innerHTML = `5/5<br>Because my girl is the smartest and the prettiest and the most gorgeous ❤️`;
+        return;
+    }
+    const q = quizData[currentQuestion];
+    const questionEl = document.createElement('div');
+    questionEl.className = 'quiz-question';
+    questionEl.innerHTML = `<h2>${q.q}</h2>`;
+    quizDiv.appendChild(questionEl);
+
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'quiz-options';
+    q.a.forEach((ans,i)=>{
+        const btn = document.createElement('button');
+        btn.textContent = ans;
+        btn.onclick = ()=>{
+            if(i === q.correct){
+                btn.classList.add('correct');
+                score++;
+            } else{
+                btn.classList.add('wrong');
+            }
+            setTimeout(()=>{
+                currentQuestion++;
+                showQuestion();
+            },500);
+        }
+        optionsDiv.appendChild(btn);
+    });
+    quizDiv.appendChild(optionsDiv);
+}
+showQuestion();
+</script>
+
+<!-- ===== Sticky Note One-Liners ===== -->
+<section>
+    <h1>Little Notes From Me 📝</h1>
+    <div class="sticky-note">
+        <p>- I love the way you laugh.<br>
+        - Your hugs are my favorite place.<br>
+        - Every day with you is my favorite day.<br>
+        - You make ordinary moments magical.<br>
+        - You complete me.</p>
+    </div>
+</section>
+
+<!-- ===== Video Clip ===== -->
+<section>
+    <h1>Moments in Motion 🎥</h1>
+    <video controls loop autoplay muted>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</section>
+
+<!-- ===== Will You Be Mine ===== -->
+<section>
+    <h1>Will You Be Mine? ❤️</h1>
+    <button class="btn yes" onclick="alert('I KNEW IT 😌❤️')">YES ❤️</button>
+    <button class="btn no" onmouseover="moveButton()" id="noBtn">NO 😢</button>
+</section>
+
+<script>
+// Move NO button initially
+window.onload = () => {
+    const btn = document.getElementById('noBtn');
+    btn.style.left = '65%';
+    btn.style.top = '50%';
+}
+
+// No button hover animation
+function moveButton(){
+    const btn = document.getElementById('noBtn');
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+// Floating hearts
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100+"vw";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),5000);
+}
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
