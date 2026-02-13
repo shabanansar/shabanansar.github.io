@@ -1,148 +1,301 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>For You ❤️</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
-            text-align: center;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        section {
-            padding: 100px 20px;
-        }
-
-        h1 {
-            font-size: 50px;
-        }
-
-        p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: auto;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            margin: 10px;
-            transition: 0.3s;
-        }
-
-        .yes {
-            background-color: #ff4d6d;
-            color: white;
-        }
-
-        .no {
-            background-color: white;
-            color: #ff4d6d;
-            position: absolute;
-        }
-
-        img {
-            width: 250px;
-            border-radius: 20px;
-            margin: 20px;
-        }
-
-        .heart {
-            position: fixed;
-            bottom: -10px;
-            color: pink;
-            animation: float 5s linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100vh); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Isma ❤️</title>
+<style>
+    /* ===== General Styles ===== */
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #ff0000, #ff4d4d);
+        scroll-behavior: smooth;
+    }
+    section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #ffc0cb;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 50px;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 20px;
+        max-width: 700px;
+        text-align: center;
+        line-height: 1.5;
+    }
+    img {
+        max-width: 300px;
+        border-radius: 20px;
+        margin: 20px;
+        transition: transform 0.5s ease;
+    }
+    img:hover {
+        transform: scale(1.1);
+    }
+    .btn {
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+    }
+    .yes {
+        background-color: #ff4d6d;
+        color: white;
+    }
+    .no {
+        background-color: white;
+        color: #ff4d6d;
+        position: absolute;
+    }
+    /* Gallery */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .gallery img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: transform 0.5s, box-shadow 0.5s;
+    }
+    .gallery img:hover {
+        transform: scale(1.2);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    /* Quiz */
+    .quiz-question {
+        margin-bottom: 20px;
+    }
+    .quiz-options button {
+        margin: 5px;
+        padding: 12px 25px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .quiz-options button.correct {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .quiz-options button.wrong {
+        background-color: #f44336;
+        color: white;
+    }
+    .quiz-options button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    /* Hearts animation */
+    .heart {
+        position: fixed;
+        bottom: -10px;
+        color: pink;
+        font-size: 30px;
+        animation: float 5s linear infinite;
+    }
+    @keyframes float {
+        0% { transform: translateY(0); opacity:1; }
+        100% { transform: translateY(-100vh); opacity:0; }
+    }
+</style>
 </head>
+<body>
 
+<!-- ===== Audio ===== -->
 <audio id="bgMusic" loop>
     <source src="elvis.mp3" type="audio/mpeg">
 </audio>
 
-
-<button onclick="playMusic()" style="position:fixed; top:20px; right:20px; padding:10px 20px; border:none; border-radius:20px; background:#ff4d6d; color:white; cursor:pointer;">
-    Play Music ❤️
-</button>
-
-
-<button onclick="playMusic()" style="position:fixed; top:20px; right:20px; padding:10px 20px; border:none; border-radius:20px; background:#ff4d6d; color:white; cursor:pointer;">
-    Play Music ❤️
-</button>
-
-
-
-    <section>
-        <h1>Hi My Love ❤️</h1>
-        <p>This website is just for you. Because you deserve something special.</p>
-    </section>
-
-    <section>
-        <h1>Why I Love You</h1>
-        <p>
-            You make my life brighter.  
-            You make me smile when I don’t even want to.  
-            You are my peace.  
-            You are my chaos.  
-            You are everything.
-        </p>
-    </section>
-
-    <section>
-        <h1>Our Memories 📸</h1>
-        <img src="https://via.placeholder.com/250">
-        <img src="https://via.placeholder.com/250">
-    </section>
-
-    <section>
-        <h1>Will You Be Mine? ❤️</h1>
-        <button class="btn yes" onclick="yesClicked()">YES ❤️</button>
-        <button class="btn no" onmouseover="moveButton()" id="noBtn">NO 😢</button>
-    </section>
-
-    <script>
-
-
-        document.body.addEventListener("click", function() {
+<script>
+document.body.addEventListener("click", function() {
     var music = document.getElementById("bgMusic");
     music.play();
 }, { once: true });
+</script>
 
-        function yesClicked() {
-            alert("I KNEW IT 😌❤️");
+<!-- ===== Sections ===== -->
+
+<!-- 1️⃣ Hi Meri Jaan -->
+<section id="section1">
+    <h1>Hi Meri Jaan ❤️</h1>
+    <h2>This website is just for you, because you deserve something special</h2>
+    <p>You make my world brighter every single day. Your smile is my favorite view, and your love is my safest place. I made this for you because you deserve all the sweetness in the world.</p>
+</section>
+
+<!-- 2️⃣ Why I Love You -->
+<section id="section2">
+    <h1>Why I Love You 💖</h1>
+    <ul style="font-size:22px; line-height:1.8; text-align:left; max-width:700px;">
+        <li>Your smile lights up my darkest days.</li>
+        <li>You are my peace and my chaos.</li>
+        <li>Your laugh is my favorite sound.</li>
+        <li>You inspire me to be better every day.</li>
+        <li>Your hugs feel like home.</li>
+        <li>You understand me like no one else does.</li>
+        <li>You are patient even when I’m not.</li>
+        <li>Your love makes me stronger.</li>
+        <li>You are breathtaking inside and out.</li>
+        <li>Simply put — you complete me.</li>
+    </ul>
+</section>
+
+<!-- 3️⃣ Time Spent Together -->
+<section id="section3">
+    <h1>Time Spent Together ⏳</h1>
+    <p id="timer" style="font-size:28px; line-height:1.8;"></p>
+</section>
+
+<script>
+// Live timer since 15 Jan 2023
+function updateTimer() {
+    const startDate = new Date('2023-01-15T00:00:00');
+    const now = new Date();
+    let diff = Math.floor((now - startDate)/1000); // seconds
+    const days = Math.floor(diff / 86400);
+    diff %= 86400;
+    const hours = Math.floor(diff / 3600);
+    diff %= 3600;
+    const minutes = Math.floor(diff / 60);
+    const seconds = diff % 60;
+    document.getElementById('timer').innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+}
+setInterval(updateTimer, 1000);
+updateTimer();
+</script>
+
+<!-- 4️⃣ Picture & Quotes -->
+<section id="section4">
+    <img src="https://via.placeholder.com/300" alt="Sweet memory">
+    <p style="font-size:24px; line-height:1.8;">Highs and Lows<br>Today, Tomorrow, Forever<br>Promise</p>
+</section>
+
+<!-- 5️⃣ Photo Gallery -->
+<section id="section5">
+    <h1>Our Memories 📸</h1>
+    <div class="gallery">
+        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/150" alt="">
+    </div>
+</section>
+
+<!-- 6️⃣ How Well Do You Know Me -->
+<section id="section6">
+    <h1>How Well Do You Know Me ❓</h1>
+    <div id="quiz"></div>
+    <div id="quizResult" style="font-size:24px; margin-top:20px;"></div>
+</section>
+
+<script>
+const quizData = [
+    {q:"Who's the prettiest and most BREATHTAKING girl in the world?", a:["Isma","My Girlfriend","Meri Jaan","My Love"], correct:0},
+    {q:"Who makes my heart skip a beat every day?", a:["Isma","Coffee","Sunshine","My Love"], correct:0},
+    {q:"Who is my favorite person to spend time with?", a:["Isma","Friend","Sister","Mom"], correct:0},
+    {q:"Who is the most gorgeous girl I know?", a:["Isma","My Friend","Meri Jaan","Neighbor"], correct:0},
+    {q:"Who owns my heart forever?", a:["Isma","Someone Else","Nobody","Meri Jaan"], correct:0}
+];
+
+let currentQuestion = 0;
+let score = 0;
+function showQuestion() {
+    const quizDiv = document.getElementById('quiz');
+    quizDiv.innerHTML = '';
+    if(currentQuestion >= quizData.length){
+        document.getElementById('quizResult').innerHTML = `5/5<br>Because my girl is the smartest and the prettiest and the most gorgeous ❤️`;
+        return;
+    }
+    const q = quizData[currentQuestion];
+    const questionEl = document.createElement('div');
+    questionEl.className = 'quiz-question';
+    questionEl.innerHTML = `<h2>${q.q}</h2>`;
+    quizDiv.appendChild(questionEl);
+
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'quiz-options';
+    q.a.forEach((ans,i)=>{
+        const btn = document.createElement('button');
+        btn.textContent = ans;
+        btn.onclick = ()=>{
+            if(i === q.correct){
+                btn.classList.add('correct');
+                score++;
+            }else{
+                btn.classList.add('wrong');
+            }
+            setTimeout(()=>{
+                currentQuestion++;
+                showQuestion();
+            },800);
         }
+        optionsDiv.appendChild(btn);
+    });
+    quizDiv.appendChild(optionsDiv);
+}
+showQuestion();
+</script>
 
-        function moveButton() {
-            var button = document.getElementById("noBtn");
-            var x = Math.random() * window.innerWidth;
-            var y = Math.random() * window.innerHeight;
-            button.style.left = x + "px";
-            button.style.top = y + "px";
-        }
+<!-- 7️⃣ Will You Be Mine -->
+<section id="section7">
+    <h1>Will You Be Mine? ❤️</h1>
+    <button class="btn yes" onclick="alert('I KNEW IT 😌❤️')">YES ❤️</button>
+    <button class="btn no" onmouseover="moveButton()" id="noBtn">NO 😢</button>
+</section>
 
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.className = "heart";
-            heart.innerHTML = "❤️";
-            heart.style.left = Math.random() * 100 + "vw";
-            document.body.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
-        }
+<script>
+function moveButton(){
+    const btn = document.getElementById('noBtn');
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    btn.style.position = "absolute";
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
 
-        setInterval(createHeart, 500);
-    </script>
+// Floating hearts
+function createHeart(){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100+"vw";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),5000);
+}
+setInterval(createHeart, 500);
+</script>
 
 </body>
 </html>
-
