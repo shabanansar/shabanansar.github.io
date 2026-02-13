@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Isma ❤️</title>
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gloria+Hallelujah&family=Poppins&display=swap" rel="stylesheet">
 <style>
 body, html {
     margin: 0;
@@ -15,7 +15,7 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* Sections as pink cards */
+/* ===== General Section Styles ===== */
 section {
     max-width: 800px;
     margin: 50px auto;
@@ -25,6 +25,33 @@ section {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     text-align: center;
     position: relative;
+}
+
+/* Hi Meri Jaan (full-width) */
+.main-heading-section {
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 80px 20px;
+}
+.main-heading-section h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+.main-heading-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+.main-heading-section p {
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 /* Headings & Text Shadows */
@@ -52,15 +79,22 @@ ul {
     text-align: left;
 }
 
-/* Images */
-img {
-    max-width: 400px;
-    border-radius: 20px;
+/* Picture + quotes */
+.quote-section img {
+    max-width: 450px;
+    border-radius: 25px;
     margin: 20px 0;
     transition: transform 0.5s ease;
 }
-img:hover {
-    transform: scale(1.1);
+.quote-section img:hover {
+    transform: scale(1.05);
+}
+.quote-section p {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 26px;
+    color: #fff;
+    line-height: 1.8;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 /* Gallery */
@@ -71,16 +105,64 @@ img:hover {
     gap: 20px;
 }
 .gallery img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
     transition: transform 0.5s, box-shadow 0.5s;
 }
 .gallery img:hover {
     transform: scale(1.2);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+}
+
+/* Quiz */
+.quiz-options button {
+    padding: 15px 25px;
+    margin: 8px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background: #fff8dc;
+    color: #ff4d6d;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+.quiz-options button.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+.quiz-options button.wrong {
+    background-color: #f44336;
+    color: white;
+}
+.quiz-options button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Sticky Note */
+.sticky-note {
+    background: #fffa87;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 5px 10px 15px rgba(0,0,0,0.3);
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Video */
+video {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
 /* Buttons */
@@ -107,20 +189,6 @@ img:hover {
     transform: translate(-50%, -50%);
 }
 
-/* Quiz buttons */
-.quiz-options button.correct {
-    background-color: #4CAF50;
-    color: white;
-}
-.quiz-options button.wrong {
-    background-color: #f44336;
-    color: white;
-}
-.quiz-options button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
 /* Floating hearts */
 .heart {
     position: fixed;
@@ -137,7 +205,7 @@ img:hover {
 </head>
 <body>
 
-<!-- Audio -->
+<!-- ===== Audio ===== -->
 <audio id="bgMusic" loop>
     <source src="elvis.mp3" type="audio/mpeg">
 </audio>
@@ -148,16 +216,14 @@ document.body.addEventListener("click", function() {
 }, { once: true });
 </script>
 
-<!-- Sections -->
-
-<!-- 1️⃣ Hi Meri Jaan -->
-<section>
+<!-- ===== Main Heading ===== -->
+<section class="main-heading-section">
     <h1>Hi Meri Jaan ❤️</h1>
     <h2>This website is just for you, because you deserve something special</h2>
     <p>You make my world brighter every single day. Your smile is my favorite view, and your love is my safest place. I made this for you because you deserve all the sweetness in the world.</p>
 </section>
 
-<!-- 2️⃣ Why I Love You -->
+<!-- ===== Why I Love You ===== -->
 <section>
     <h1>Why I Love You 💖</h1>
     <ul>
@@ -174,14 +240,13 @@ document.body.addEventListener("click", function() {
     </ul>
 </section>
 
-<!-- 3️⃣ Time Spent Together -->
+<!-- ===== Time Spent Together ===== -->
 <section>
     <h1>Time Spent Together Since I Became Whole ⏳</h1>
     <p id="timer"></p>
 </section>
-
 <script>
-// Live timer since 15 Jan 2023
+// Live timer
 function updateTimer() {
     const startDate = new Date('2023-01-15T00:00:00');
     const now = new Date();
@@ -198,28 +263,26 @@ setInterval(updateTimer, 1000);
 updateTimer();
 </script>
 
-<!-- 4️⃣ Picture & Quotes -->
-<section>
-    <img src="https://via.placeholder.com/300" alt="Sweet memory">
-    <p style="font-size:24px; line-height:1.8; text-shadow:2px 2px 4px rgba(0,0,0,0.3);">
-        Highs and Lows<br>Today, Tomorrow, Forever<br>Promise
-    </p>
+<!-- ===== Picture + Quotes ===== -->
+<section class="quote-section">
+    <img src="https://via.placeholder.com/450" alt="Sweet memory">
+    <p>Highs and Lows<br>Today, Tomorrow, Forever<br>Promise</p>
 </section>
 
-<!-- 5️⃣ Photo Gallery -->
+<!-- ===== Photo Gallery ===== -->
 <section>
     <h1>Our Memories 📸</h1>
     <div class="gallery">
-        <img src="https://via.placeholder.com/200" alt="">
-        <img src="https://via.placeholder.com/200" alt="">
-        <img src="https://via.placeholder.com/200" alt="">
-        <img src="https://via.placeholder.com/200" alt="">
-        <img src="https://via.placeholder.com/200" alt="">
-        <img src="https://via.placeholder.com/200" alt="">
+        <img src="https://via.placeholder.com/220" alt="">
+        <img src="https://via.placeholder.com/220" alt="">
+        <img src="https://via.placeholder.com/220" alt="">
+        <img src="https://via.placeholder.com/220" alt="">
+        <img src="https://via.placeholder.com/220" alt="">
+        <img src="https://via.placeholder.com/220" alt="">
     </div>
 </section>
 
-<!-- 6️⃣ Quiz -->
+<!-- ===== Quiz ===== -->
 <section>
     <h1>How Well Do You Know Me ❓</h1>
     <div id="quiz"></div>
@@ -228,11 +291,11 @@ updateTimer();
 
 <script>
 const quizData = [
-    {q:"Who's the prettiest and most BREATHTAKING girl in the world?", a:["My Friend","Meri Jaan","Isma","My Love"], correct:2},
-    {q:"Who makes my heart skip a beat every day?", a:["Isma","Coffee","Sunshine","My Love"], correct:0},
+    {q:"Who's the prettiest and most BREATHTAKING girl in the world?", a:["Meri Jaan","My Friend","Isma","My Love"], correct:2},
+    {q:"Who makes my heart skip a beat every day?", a:["Chai","My love","Sunshine","Coffee"], correct:1},
     {q:"Who is my favorite person to spend time with?", a:["Isma","Friend","Sister","Mom"], correct:0},
-    {q:"Who is the most gorgeous girl I know?", a:["Isma","My Friend","Meri Jaan","Neighbor"], correct:0},
-    {q:"Who owns my heart forever?", a:["Isma","Someone Else","Nobody","Meri Jaan"], correct:0}
+    {q:"Who do I admire the most?", a:["Meri Jaan","Isma","My Love","Neighbor"], correct:1},
+    {q:"Who owns my heart forever?", a:["Isma","Someone Else","My Love","Nobody"], correct:2}
 ];
 
 let currentQuestion = 0;
@@ -242,7 +305,7 @@ function showQuestion() {
     const quizDiv = document.getElementById('quiz');
     quizDiv.innerHTML = '';
     if(currentQuestion >= quizData.length){
-        document.getElementById('quizResult').innerHTML = `${score}/5<br>Because my girl is the smartest and the prettiest and the most gorgeous ❤️`;
+        document.getElementById('quizResult').innerHTML = `5/5<br>Because my girl is the smartest and the prettiest and the most gorgeous ❤️`;
         return;
     }
     const q = quizData[currentQuestion];
@@ -275,7 +338,28 @@ function showQuestion() {
 showQuestion();
 </script>
 
-<!-- 7️⃣ Will You Be Mine -->
+<!-- ===== Sticky Note One-Liners ===== -->
+<section>
+    <h1>Little Notes From Me 📝</h1>
+    <div class="sticky-note">
+        <p>- I love the way you laugh.<br>
+        - Your hugs are my favorite place.<br>
+        - Every day with you is my favorite day.<br>
+        - You make ordinary moments magical.<br>
+        - You complete me.</p>
+    </div>
+</section>
+
+<!-- ===== Video Clip ===== -->
+<section>
+    <h1>Moments in Motion 🎥</h1>
+    <video controls>
+        <source src="samplevideo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</section>
+
+<!-- ===== Will You Be Mine ===== -->
 <section>
     <h1>Will You Be Mine? ❤️</h1>
     <button class="btn yes" onclick="alert('I KNEW IT 😌❤️')">YES ❤️</button>
