@@ -339,6 +339,37 @@ window.addEventListener('wheel', (e)=>{
     scrollCooldown = true;
     setTimeout(()=>scrollCooldown=false, 500);
 });
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('section');
+
+    function showSlide(index){
+        slides.forEach((slide,i)=>{
+            if(i === index){
+                slide.style.transform = 'translateX(0)';
+                slide.style.opacity = 1;
+            } else {
+                slide.style.transform = 'translateX(100vw)';
+                slide.style.opacity = 0;
+            }
+        });
+    }
+    showSlide(currentSlide);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){
+            if(currentSlide < slides.length-1) currentSlide++;
+            showSlide(currentSlide);
+        }
+        if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
+            if(currentSlide > 0) currentSlide--;
+            showSlide(currentSlide);
+        }
+    });
+
+    // Mouse scr
 
 </body>
 </html>
