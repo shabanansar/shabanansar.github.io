@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .no {
+            background-color: white;
+            color: #ff4d6d;
+            position: absolute;
+        }
+
+        img {
+            width: 250px;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            color: pink;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100vh); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio autoplay loop>
+        <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
+    </audio>
+
+    <section>
+        <h1>Hi My Love ❤️</h1>
+        <p>This website is just for you. Because you deserve something special.</p>
+    </section>
+
+    <section>
+        <h1>Why I Love You</h1>
+        <p>
+            You make my life brighter.  
+            You make me smile when I don’t even want to.  
+            You are my peace.  
+            You are my chaos.  
+            You are everything.
+        </p>
+    </section>
+
+    <section>
+        <h1>Our Memories 📸</h1>
+        <img src="https://via.placeholder.com/250">
+        <img src="https://via.placeholder.com/250">
+    </section>
+
+    <section>
+        <h1>Will You Be Mine? ❤️</h1>
+        <button class="btn yes" onclick="yesClicked()">YES ❤️</button>
+        <button class="btn no" onmouseover="moveButton()" id="noBtn">NO 😢</button>
+    </section>
+
+    <script>
+        function yesClicked() {
+            alert("I KNEW IT 😌❤️");
+        }
+
+        function moveButton() {
+            var button = document.getElementById("noBtn");
+            var x = Math.random() * window.innerWidth;
+            var y = Math.random() * window.innerHeight;
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
 
