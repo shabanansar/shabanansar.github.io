@@ -22,12 +22,10 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: none;
-    box-shadow: none;
-    margin: 0;
-    padding: 80px 20px;
-    min-height: 60vh;
     text-align: center;
+    margin: 0;
+    padding: 100px 20px;
+    min-height: 60vh;
 }
 .main-heading-section h1 {
     font-family: 'Dancing Script', cursive;
@@ -61,32 +59,13 @@ section {
     position: relative;
 }
 
-/* Headings & Text Shadows */
-h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 50px;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-}
-h2 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-p, li {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-ul {
-    list-style: disc;
-    padding-left: 30px;
-    text-align: left;
-}
+/* Headings & Text */
+h1 { font-family: 'Dancing Script', cursive; font-size: 50px; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);}
+h2 { font-family: 'Roboto', sans-serif; font-size: 28px; margin-bottom: 20px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);}
+p, li { font-family: 'Roboto', sans-serif; font-size: 20px; line-height: 1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);}
+ul { list-style: disc; padding-left: 30px; text-align: left;}
 
-/* ===== Picture + Quotes ===== */
+/* ===== Quote Section ===== */
 .quote-section img {
     max-width: 500px;
     border-radius: 25px;
@@ -140,18 +119,9 @@ ul {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
-.quiz-options button.correct {
-    background-color: #4CAF50;
-    color: white;
-}
-.quiz-options button.wrong {
-    background-color: #f44336;
-    color: white;
-}
-.quiz-options button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
+.quiz-options button.correct { background-color: #4CAF50; color: white; }
+.quiz-options button.wrong { background-color: #f44336; color: white; }
+.quiz-options button:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.4);}
 
 /* ===== Sticky Note ===== */
 .sticky-note {
@@ -174,7 +144,7 @@ video {
     height: auto;
     border-radius: 25px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 5px solid #fff0f5; /* subtle cute border */
+    border: 5px solid #fff0f5; 
     background: #ffe6f0;
 }
 
@@ -189,31 +159,12 @@ video {
     transition: 0.3s;
     font-family: 'Roboto', sans-serif;
 }
-.yes {
-    background-color: #ff4d6d;
-    color: white;
-}
-.no {
-    background-color: white;
-    color: #ff4d6d;
-    position: absolute;
-    left: 65%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+.yes { background-color: #ff4d6d; color: white; }
+.no { background-color: white; color: #ff4d6d; position: absolute; left: 65%; top: 50%; transform: translate(-50%, -50%);}
 
 /* ===== Floating Hearts ===== */
-.heart {
-    position: fixed;
-    bottom: -10px;
-    color: pink;
-    font-size: 30px;
-    animation: float 5s linear infinite;
-}
-@keyframes float {
-    0% { transform: translateY(0); opacity:1; }
-    100% { transform: translateY(-100vh); opacity:0; }
-}
+.heart { position: fixed; bottom: -10px; color: pink; font-size: 30px; animation: float 5s linear infinite;}
+@keyframes float { 0% { transform: translateY(0); opacity:1; } 100% { transform: translateY(-100vh); opacity:0; }}
 </style>
 </head>
 <body>
@@ -249,7 +200,7 @@ document.body.addEventListener("click", function() {
         <li>You are patient even when I’m not.</li>
         <li>Your love makes me stronger.</li>
         <li>You are breathtaking inside and out.</li>
-        <li>Simply put — you complete me.</li>
+        <li>You complete me.</li>
     </ul>
 </section>
 
@@ -300,19 +251,15 @@ updateTimer();
     <div id="quiz"></div>
     <div id="quizResult" style="font-size:24px; margin-top:20px;"></div>
 </section>
-
 <script>
 const quizData = [
-    {q:"Who's the prettiest and most BREATHTAKING girl in the world?", a:["Meri Jaan","My Friend","Isma","My Love"], correct:2},
-    {q:"Who makes my heart skip a beat every day?", a:["Chai","My love","Sunshine","Coffee"], correct:1},
-    {q:"Who is my favorite person to spend time with?", a:["Isma","Friend","Sister","Mom"], correct:0},
-    {q:"Who do I admire the most?", a:["Meri Jaan","Isma","My Love","Neighbor"], correct:1},
+    {q:"Who's the prettiest and most BREATHTAKING girl in the world?", a:["Meri Jaan","Lake Como","Isma","My Love"], correct:2},
+    {q:"Who makes my heart skip a beat every day?", a:["Chai","My love","Sunshine","Goodgirl"], correct:1},
+    {q:"Who is my favorite person to spend time with?", a:["Isma","Friends","Myself","My Baddie"], correct:0},
+    {q:"Who do I admire the most?", a:["Meri Jaan","Isma","My Love","John Cena"], correct:1},
     {q:"Who owns my heart forever?", a:["Isma","Someone Else","My Love","Nobody"], correct:2}
 ];
-
-let currentQuestion = 0;
-let score = 0;
-
+let currentQuestion = 0, score = 0;
 function showQuestion() {
     const quizDiv = document.getElementById('quiz');
     quizDiv.innerHTML = '';
@@ -325,23 +272,14 @@ function showQuestion() {
     questionEl.className = 'quiz-question';
     questionEl.innerHTML = `<h2>${q.q}</h2>`;
     quizDiv.appendChild(questionEl);
-
     const optionsDiv = document.createElement('div');
     optionsDiv.className = 'quiz-options';
     q.a.forEach((ans,i)=>{
         const btn = document.createElement('button');
         btn.textContent = ans;
         btn.onclick = ()=>{
-            if(i === q.correct){
-                btn.classList.add('correct');
-                score++;
-            } else{
-                btn.classList.add('wrong');
-            }
-            setTimeout(()=>{
-                currentQuestion++;
-                showQuestion();
-            },500);
+            if(i === q.correct){ btn.classList.add('correct'); score++; } else{ btn.classList.add('wrong'); }
+            setTimeout(()=>{currentQuestion++; showQuestion();},500);
         }
         optionsDiv.appendChild(btn);
     });
@@ -350,7 +288,7 @@ function showQuestion() {
 showQuestion();
 </script>
 
-<!-- ===== Sticky Note One-Liners ===== -->
+<!-- ===== Sticky Note ===== -->
 <section>
     <h1>Little Notes From Me 📝</h1>
     <div class="sticky-note">
@@ -377,16 +315,12 @@ showQuestion();
     <button class="btn yes" onclick="alert('I KNEW IT 😌❤️')">YES ❤️</button>
     <button class="btn no" onmouseover="moveButton()" id="noBtn">NO 😢</button>
 </section>
-
 <script>
-// Move NO button initially
 window.onload = () => {
     const btn = document.getElementById('noBtn');
     btn.style.left = '65%';
     btn.style.top = '50%';
 }
-
-// No button hover animation
 function moveButton(){
     const btn = document.getElementById('noBtn');
     const x = Math.random() * (window.innerWidth - 100);
@@ -394,8 +328,6 @@ function moveButton(){
     btn.style.left = x + "px";
     btn.style.top = y + "px";
 }
-
-// Floating hearts
 function createHeart(){
     const heart = document.createElement('div');
     heart.className = 'heart';
