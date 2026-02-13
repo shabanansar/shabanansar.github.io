@@ -113,11 +113,12 @@
 
     <script>
         
-
-        function playMusic() {
+// Play music on first click anywhere
+document.body.addEventListener("click", function() {
     var music = document.getElementById("bgMusic");
     music.play();
-}
+}, { once: true }); // 'once: true' ensures it only triggers once
+
 
         document.body.addEventListener("click", function() {
     var music = document.getElementById("bgMusic");
