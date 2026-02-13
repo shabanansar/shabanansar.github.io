@@ -16,20 +16,22 @@
         scroll-behavior: smooth;
     }
     section {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: #ffc0cb;
-        margin: 0;
-        box-sizing: border-box;
-        padding: 50px;
-        border-radius: 30px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        transition: transform 0.8s ease, opacity 0.8s ease;
-    }
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #ffc0cb;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    opacity: 0;
+    transform: translateX(100vw);
+}
+
     h1 {
         font-size: 50px;
         margin-bottom: 20px;
@@ -296,6 +298,48 @@ function createHeart(){
 }
 setInterval(createHeart, 500);
 </script>
+// Slide navigation
+let currentSlide = 0;
+const slides = document.querySelectorAll('section');
+
+function showSlide(index){
+    slides.forEach((slide,i)=>{
+        if(i === index){
+            slide.style.transform = 'translateX(0)';
+            slide.style.opacity = 1;
+        } else {
+            slide.style.transform = 'translateX(100vw)';
+            slide.style.opacity = 0;
+        }
+    });
+}
+showSlide(currentSlide);
+
+// Keyboard navigation
+document.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){
+        if(currentSlide < slides.length-1) currentSlide++;
+        showSlide(currentSlide);
+    }
+    if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
+        if(currentSlide > 0) currentSlide--;
+        showSlide(currentSlide);
+    }
+});
+
+// Optional: Mouse scroll navigation
+let scrollCooldown = false;
+window.addEventListener('wheel', (e)=>{
+    if(scrollCooldown) return;
+    if(e.deltaY > 0){
+        if(currentSlide < slides.length-1) currentSlide++;
+    } else {
+        if(currentSlide > 0) currentSlide--;
+    }
+    showSlide(currentSlide);
+    scrollCooldown = true;
+    setTimeout(()=>scrollCooldown=false, 500);
+});
 
 </body>
 </html>
