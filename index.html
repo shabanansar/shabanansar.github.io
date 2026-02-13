@@ -4,140 +4,143 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Isma ❤️</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
 <style>
-    /* ===== General Styles ===== */
-    body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-        font-family: 'Arial', sans-serif;
-        background: linear-gradient(to bottom, #ff0000, #ff4d4d);
-        scroll-behavior: smooth;
-    }
-    section {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #ffc0cb;
-    padding: 50px;
-    border-radius: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    opacity: 0;
-    transform: translateX(100vw);
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #ff0000, #ff4d4d);
+    scroll-behavior: smooth;
 }
-    h1 {
-        font-size: 50px;
-        margin-bottom: 20px;
-    }
-    h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-    p {
-        font-size: 20px;
-        max-width: 700px;
-        text-align: center;
-        line-height: 1.5;
-    }
-    img {
-        max-width: 300px;
-        border-radius: 20px;
-        margin: 20px;
-        transition: transform 0.5s ease;
-    }
-    img:hover {
-        transform: scale(1.1);
-    }
-    .btn {
-        padding: 15px 30px;
-        font-size: 18px;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        margin: 10px;
-        transition: 0.3s;
-    }
-    .yes {
-        background-color: #ff4d6d;
-        color: white;
-    }
-    .no {
-        background-color: white;
-        color: #ff4d6d;
-        position: absolute;
-    }
-    /* Gallery */
-    .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    .gallery img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        cursor: pointer;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        transition: transform 0.5s, box-shadow 0.5s;
-    }
-    .gallery img:hover {
-        transform: scale(1.2);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    }
-    /* Quiz */
-    .quiz-question {
-        margin-bottom: 20px;
-    }
-    .quiz-options button {
-        margin: 5px;
-        padding: 12px 25px;
-        border-radius: 25px;
-        border: none;
-        cursor: pointer;
-        font-size: 18px;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .quiz-options button.correct {
-        background-color: #4CAF50;
-        color: white;
-    }
-    .quiz-options button.wrong {
-        background-color: #f44336;
-        color: white;
-    }
-    .quiz-options button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    /* Hearts animation */
-    .heart {
-        position: fixed;
-        bottom: -10px;
-        color: pink;
-        font-size: 30px;
-        animation: float 5s linear infinite;
-    }
-    @keyframes float {
-        0% { transform: translateY(0); opacity:1; }
-        100% { transform: translateY(-100vh); opacity:0; }
-    }
+
+/* Sections as pink cards */
+section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px 30px;
+    background: #ffc0cb;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+}
+
+/* Headings & Text Shadows */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+p, li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+ul {
+    list-style: disc;
+    padding-left: 30px;
+    text-align: left;
+}
+
+/* Images */
+img {
+    max-width: 400px;
+    border-radius: 20px;
+    margin: 20px 0;
+    transition: transform 0.5s ease;
+}
+img:hover {
+    transform: scale(1.1);
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.gallery img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Buttons */
+.btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+.yes {
+    background-color: #ff4d6d;
+    color: white;
+}
+.no {
+    background-color: white;
+    color: #ff4d6d;
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Quiz buttons */
+.quiz-options button.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+.quiz-options button.wrong {
+    background-color: #f44336;
+    color: white;
+}
+.quiz-options button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: pink;
+    font-size: 30px;
+    animation: float 5s linear infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0); opacity:1; }
+    100% { transform: translateY(-100vh); opacity:0; }
+}
 </style>
 </head>
 <body>
 
-<!-- ===== Audio ===== -->
+<!-- Audio -->
 <audio id="bgMusic" loop>
     <source src="elvis.mp3" type="audio/mpeg">
 </audio>
-
 <script>
 document.body.addEventListener("click", function() {
     var music = document.getElementById("bgMusic");
@@ -145,19 +148,19 @@ document.body.addEventListener("click", function() {
 }, { once: true });
 </script>
 
-<!-- ===== Sections ===== -->
+<!-- Sections -->
 
 <!-- 1️⃣ Hi Meri Jaan -->
-<section id="section1">
+<section>
     <h1>Hi Meri Jaan ❤️</h1>
     <h2>This website is just for you, because you deserve something special</h2>
     <p>You make my world brighter every single day. Your smile is my favorite view, and your love is my safest place. I made this for you because you deserve all the sweetness in the world.</p>
 </section>
 
 <!-- 2️⃣ Why I Love You -->
-<section id="section2">
+<section>
     <h1>Why I Love You 💖</h1>
-    <ul style="font-size:22px; line-height:1.8; text-align:left; max-width:700px;">
+    <ul>
         <li>Your smile lights up my darkest days.</li>
         <li>You are my peace and my chaos.</li>
         <li>Your laugh is my favorite sound.</li>
@@ -172,9 +175,9 @@ document.body.addEventListener("click", function() {
 </section>
 
 <!-- 3️⃣ Time Spent Together -->
-<section id="section3">
-    <h1>Time Spent Together ⏳</h1>
-    <p id="timer" style="font-size:28px; line-height:1.8;"></p>
+<section>
+    <h1>Time Spent Together Since I Became Whole ⏳</h1>
+    <p id="timer"></p>
 </section>
 
 <script>
@@ -182,7 +185,7 @@ document.body.addEventListener("click", function() {
 function updateTimer() {
     const startDate = new Date('2023-01-15T00:00:00');
     const now = new Date();
-    let diff = Math.floor((now - startDate)/1000); // seconds
+    let diff = Math.floor((now - startDate)/1000);
     const days = Math.floor(diff / 86400);
     diff %= 86400;
     const hours = Math.floor(diff / 3600);
@@ -196,26 +199,28 @@ updateTimer();
 </script>
 
 <!-- 4️⃣ Picture & Quotes -->
-<section id="section4">
+<section>
     <img src="https://via.placeholder.com/300" alt="Sweet memory">
-    <p style="font-size:24px; line-height:1.8;">Highs and Lows<br>Today, Tomorrow, Forever<br>Promise</p>
+    <p style="font-size:24px; line-height:1.8; text-shadow:2px 2px 4px rgba(0,0,0,0.3);">
+        Highs and Lows<br>Today, Tomorrow, Forever<br>Promise
+    </p>
 </section>
 
 <!-- 5️⃣ Photo Gallery -->
-<section id="section5">
+<section>
     <h1>Our Memories 📸</h1>
     <div class="gallery">
-        <img src="https://via.placeholder.com/150" alt="">
-        <img src="https://via.placeholder.com/150" alt="">
-        <img src="https://via.placeholder.com/150" alt="">
-        <img src="https://via.placeholder.com/150" alt="">
-        <img src="https://via.placeholder.com/150" alt="">
-        <img src="https://via.placeholder.com/150" alt="">
+        <img src="https://via.placeholder.com/200" alt="">
+        <img src="https://via.placeholder.com/200" alt="">
+        <img src="https://via.placeholder.com/200" alt="">
+        <img src="https://via.placeholder.com/200" alt="">
+        <img src="https://via.placeholder.com/200" alt="">
+        <img src="https://via.placeholder.com/200" alt="">
     </div>
 </section>
 
-<!-- 6️⃣ How Well Do You Know Me -->
-<section id="section6">
+<!-- 6️⃣ Quiz -->
+<section>
     <h1>How Well Do You Know Me ❓</h1>
     <div id="quiz"></div>
     <div id="quizResult" style="font-size:24px; margin-top:20px;"></div>
@@ -223,7 +228,7 @@ updateTimer();
 
 <script>
 const quizData = [
-    {q:"Who's the prettiest and most BREATHTAKING girl in the world?", a:["Isma","My Girlfriend","Meri Jaan","My Love"], correct:0},
+    {q:"Who's the prettiest and most BREATHTAKING girl in the world?", a:["My Friend","Meri Jaan","Isma","My Love"], correct:2},
     {q:"Who makes my heart skip a beat every day?", a:["Isma","Coffee","Sunshine","My Love"], correct:0},
     {q:"Who is my favorite person to spend time with?", a:["Isma","Friend","Sister","Mom"], correct:0},
     {q:"Who is the most gorgeous girl I know?", a:["Isma","My Friend","Meri Jaan","Neighbor"], correct:0},
@@ -232,11 +237,12 @@ const quizData = [
 
 let currentQuestion = 0;
 let score = 0;
+
 function showQuestion() {
     const quizDiv = document.getElementById('quiz');
     quizDiv.innerHTML = '';
     if(currentQuestion >= quizData.length){
-        document.getElementById('quizResult').innerHTML = `5/5<br>Because my girl is the smartest and the prettiest and the most gorgeous ❤️`;
+        document.getElementById('quizResult').innerHTML = `${score}/5<br>Because my girl is the smartest and the prettiest and the most gorgeous ❤️`;
         return;
     }
     const q = quizData[currentQuestion];
@@ -254,13 +260,13 @@ function showQuestion() {
             if(i === q.correct){
                 btn.classList.add('correct');
                 score++;
-            }else{
+            } else{
                 btn.classList.add('wrong');
             }
             setTimeout(()=>{
                 currentQuestion++;
                 showQuestion();
-            },800);
+            },500);
         }
         optionsDiv.appendChild(btn);
     });
@@ -270,18 +276,25 @@ showQuestion();
 </script>
 
 <!-- 7️⃣ Will You Be Mine -->
-<section id="section7">
+<section>
     <h1>Will You Be Mine? ❤️</h1>
     <button class="btn yes" onclick="alert('I KNEW IT 😌❤️')">YES ❤️</button>
     <button class="btn no" onmouseover="moveButton()" id="noBtn">NO 😢</button>
 </section>
 
 <script>
+// Move NO button initially
+window.onload = () => {
+    const btn = document.getElementById('noBtn');
+    btn.style.left = '65%';
+    btn.style.top = '50%';
+}
+
+// No button hover animation
 function moveButton(){
     const btn = document.getElementById('noBtn');
     const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 50);
-    btn.style.position = "absolute";
     btn.style.left = x + "px";
     btn.style.top = y + "px";
 }
@@ -296,51 +309,6 @@ function createHeart(){
     setTimeout(()=>heart.remove(),5000);
 }
 setInterval(createHeart, 500);
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('section');
-
-    function showSlide(index){
-        slides.forEach((slide,i)=>{
-            if(i === index){
-                slide.style.transform = 'translateX(0)';
-                slide.style.opacity = 1;
-            } else {
-                slide.style.transform = 'translateX(100vw)';
-                slide.style.opacity = 0;
-            }
-        });
-    }
-    showSlide(currentSlide);
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e)=>{
-        if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){
-            if(currentSlide < slides.length-1) currentSlide++;
-            showSlide(currentSlide);
-        }
-        if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
-            if(currentSlide > 0) currentSlide--;
-            showSlide(currentSlide);
-        }
-    });
-
-    // Mouse scroll navigation
-    let scrollCooldown = false;
-    window.addEventListener('wheel', (e)=>{
-        if(scrollCooldown) return;
-        if(e.deltaY > 0){
-            if(currentSlide < slides.length-1) currentSlide++;
-        } else {
-            if(currentSlide > 0) currentSlide--;
-        }
-        showSlide(currentSlide);
-        scrollCooldown = true;
-        setTimeout(()=>scrollCooldown=false, 500);
-    });
-});
 </script>
 
 </body>
